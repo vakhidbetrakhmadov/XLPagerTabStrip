@@ -25,10 +25,10 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
-                        <rect key="frame" x="98" y="10" width="20" height="20"/>
+                        <rect key="frame" x="94" y="12" width="16" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="20" id="8Kc-H6-AXe"/>
-                            <constraint firstAttribute="height" constant="20" id="fLp-qD-04S"/>
+                            <constraint firstAttribute="width" constant="16" id="8Kc-H6-AXe"/>
+                            <constraint firstAttribute="height" constant="16" id="fLp-qD-04S"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -36,9 +36,9 @@
             <color key="backgroundColor" red="0.027450980390000001" green="0.72549019609999998" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerX" secondItem="zg4-fX-zUF" secondAttribute="centerX" id="bBq-kt-TtX"/>
-                <constraint firstItem="tFG-yJ-6Th" firstAttribute="leading" secondItem="s7f-rk-sQl" secondAttribute="trailing" constant="8" id="ehz-v2-uws"/>
+                <constraint firstItem="tFG-yJ-6Th" firstAttribute="leading" secondItem="s7f-rk-sQl" secondAttribute="trailing" constant="4" id="ehz-v2-uws"/>
                 <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerY" secondItem="s7f-rk-sQl" secondAttribute="centerY" id="fRK-Ni-peX"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tFG-yJ-6Th" secondAttribute="trailing" constant="8" id="oyp-eD-Hrp"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tFG-yJ-6Th" secondAttribute="trailing" constant="4" id="oyp-eD-Hrp"/>
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerY" secondItem="zg4-fX-zUF" secondAttribute="centerY" id="uKX-CO-B7I"/>
             </constraints>
             <size key="customSize" width="142" height="40"/>
