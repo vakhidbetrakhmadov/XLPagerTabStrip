@@ -260,8 +260,34 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
         if let changeCurrentIndexProgressive = changeCurrentIndexProgressive {
             let oldIndexPath = IndexPath(item: currentIndex != fromIndex ? fromIndex : toIndex, section: 0)
             let newIndexPath = IndexPath(item: currentIndex, section: 0)
-
+            
+            let oldChildController = viewControllers[oldIndexPath.item] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
+            let newChildController = viewControllers[newIndexPath.item] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
+            pagerTabStates[oldIndexPath.item] = .notSelected
+            pagerTabStates[newIndexPath.item] = .selected
+            let oldIndicatorInfo = oldChildController.indicatorInfo(for: self, state: .notSelected)
+            let newIndicatorInfo = newChildController.indicatorInfo(for: self, state: .selected)
+            
             let cells = cellForItems(at: [oldIndexPath, newIndexPath], reloadIfNotVisible: collectionViewDidLoad)
+            
+            let compacted = cells.compactMap { $0 }
+            [compacted.first! : oldIndicatorInfo, compacted.last! : newIndicatorInfo].forEach { cell, indicatorInfo in
+                cell.label.text = indicatorInfo.title
+                cell.accessibilityLabel = indicatorInfo.accessibilityLabel
+                cell.label.font = settings.style.buttonBarItemFont
+                cell.label.textColor = indicatorInfo.titleColor ?? (settings.style.buttonBarItemTitleColor ?? cell.label.textColor)
+                cell.contentView.backgroundColor = settings.style.buttonBarItemBackgroundColor ?? cell.contentView.backgroundColor
+                cell.backgroundColor = settings.style.buttonBarItemBackgroundColor ?? cell.backgroundColor
+                if let image = indicatorInfo.image {
+                    cell.imageView.image = image
+                }
+                if let highlightedImage = indicatorInfo.highlightedImage {
+                    cell.imageView.highlightedImage = highlightedImage
+                }
+            }
+            
+            buttonBarView.reloadItems(at: [oldIndexPath, newIndexPath])
+            
             changeCurrentIndexProgressive(cells.first!, cells.last!, progressPercentage, indexWasChanged, true)
         }
     }
