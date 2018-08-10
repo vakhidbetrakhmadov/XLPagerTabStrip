@@ -164,6 +164,11 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
 
         buttonBarView.selectedBarHeight = settings.style.selectedBarHeight
         buttonBarView.selectedBarVerticalAlignment = settings.style.selectedBarVerticalAlignment
+        
+        buttonBarView.barLine.backgroundColor = settings.style.buttonBarLineColor ?? buttonBarView.barLine.backgroundColor
+        if let height = settings.style.buttonBarHeight {
+            buttonBarView.barLine.frame = CGRect(x: 0, y: buttonBarView.bounds.height - height, width: buttonBarView.bounds.width, height: height)
+        }
 
         // register button bar item cell
         switch buttonBarItemSpec! {
