@@ -12,20 +12,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zg4-fX-zUF" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="142" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="142" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="80" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-rk-sQl">
-                        <rect key="frame" x="52.5" y="11.5" width="37.5" height="17"/>
+                        <rect key="frame" x="21.5" y="11.5" width="37.5" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
-                        <rect key="frame" x="94" y="10" width="20" height="20"/>
+                        <rect key="frame" x="63" y="10" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="8Kc-H6-AXe"/>
                             <constraint firstAttribute="height" constant="20" id="fLp-qD-04S"/>
@@ -38,7 +38,6 @@
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerX" secondItem="zg4-fX-zUF" secondAttribute="centerX" id="bBq-kt-TtX"/>
                 <constraint firstItem="tFG-yJ-6Th" firstAttribute="leading" secondItem="s7f-rk-sQl" secondAttribute="trailing" constant="4" id="ehz-v2-uws"/>
                 <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerY" secondItem="s7f-rk-sQl" secondAttribute="centerY" id="fRK-Ni-peX"/>
-                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tFG-yJ-6Th" secondAttribute="trailing" constant="4" id="oyp-eD-Hrp"/>
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerY" secondItem="zg4-fX-zUF" secondAttribute="centerY" id="uKX-CO-B7I"/>
             </constraints>
             <size key="customSize" width="142" height="40"/>
