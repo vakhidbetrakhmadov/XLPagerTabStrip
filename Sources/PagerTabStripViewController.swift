@@ -26,10 +26,13 @@ import Foundation
 
 // MARK: Protocols
 
+public enum PagerTabState {
+    case selected
+    case notSelected
+}
+
 public protocol IndicatorInfoProvider {
-
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo
-
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController, state: PagerTabState) -> IndicatorInfo
 }
 
 public protocol PagerTabStripDelegate: class {
@@ -58,7 +61,16 @@ open class PagerTabStripViewController: UIViewController, UIScrollViewDelegate {
 
     open var pagerBehaviour = PagerTabStripBehaviour.progressive(skipIntermediateViewControllers: true, elasticIndicatorLimit: true)
 
-    open private(set) var viewControllers = [UIViewController]()
+    open var pagerTabStates: [PagerTabState] = []
+    
+    open private(set) var viewControllers = [UIViewController]() {
+        didSet {
+            self.pagerTabStates = [PagerTabState].init(repeating: .notSelected, count: self.viewControllers.count)
+            guard !pagerTabStates.isEmpty else { return }
+            pagerTabStates[0] = .selected
+        }
+    }
+    
     open private(set) var currentIndex = 0
     open private(set) var preCurrentIndex = 0 // used *only* to store the index to which move when the pager becomes visible
 

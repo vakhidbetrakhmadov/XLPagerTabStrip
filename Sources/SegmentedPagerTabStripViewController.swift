@@ -78,10 +78,10 @@ open class SegmentedPagerTabStripViewController: PagerTabStripViewController, Pa
         segmentedControl.removeAllSegments()
         for (index, item) in viewControllers.enumerated() {
             let child = item as! IndicatorInfoProvider // swiftlint:disable:this force_cast
-            if let image = child.indicatorInfo(for: self).image {
+            if let image = child.indicatorInfo(for: self, state: pagerTabStates[index]).image {
                 segmentedControl.insertSegment(with: image, at: index, animated: false)
             } else {
-                segmentedControl.insertSegment(withTitle: child.indicatorInfo(for: self).title, at: index, animated: false)
+                segmentedControl.insertSegment(withTitle: child.indicatorInfo(for: self, state: pagerTabStates[index]).title, at: index, animated: false)
             }
         }
         segmentedControl.selectedSegmentIndex = currentIndex

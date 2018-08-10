@@ -233,7 +233,7 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
             fatalError("UICollectionViewCell should be or extend from ButtonBarViewCell")
         }
         let childController = viewControllers[indexPath.item] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
-        let indicatorInfo = childController.indicatorInfo(for: self)
+        let indicatorInfo = childController.indicatorInfo(for: self, state: pagerTabStates[indexPath.item])
 
         configure(cell: cell, for: indicatorInfo)
 
@@ -270,9 +270,9 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
         var minimumCellWidths = [CGFloat]()
         var collectionViewContentWidth: CGFloat = 0
 
-        for viewController in viewControllers {
+        viewControllers.enumerated().forEach { index, viewController in
             let childController = viewController as! IndicatorInfoProvider // swiftlint:disable:this force_cast
-            let indicatorInfo = childController.indicatorInfo(for: self)
+            let indicatorInfo = childController.indicatorInfo(for: self, state: pagerTabStates[index])
             switch buttonBarItemSpec! {
             case .cellClass(let widthCallback):
                 let width = widthCallback(indicatorInfo)

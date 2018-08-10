@@ -174,7 +174,7 @@ open class TwitterPagerTabStripViewController: PagerTabStripViewController, Page
         childTitleLabels.removeAll()
         for (index, item) in viewControllers.enumerated() {
             let child = item as! IndicatorInfoProvider // swiftlint:disable:this force_cast
-            let indicatorInfo = child.indicatorInfo(for: self)
+            let indicatorInfo = child.indicatorInfo(for: self, state: pagerTabStates[index])
             let navTitleLabel: UILabel = {
                 let label = UILabel()
                 label.text = indicatorInfo.title
