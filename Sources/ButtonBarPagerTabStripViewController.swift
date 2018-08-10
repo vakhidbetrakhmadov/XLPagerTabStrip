@@ -127,7 +127,9 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
                 let buttonBarHeight = settings.style.buttonBarHeight ?? 44
                 let buttonBar = ButtonBarView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: buttonBarHeight), collectionViewLayout: flowLayout)
                 buttonBar.barLine.backgroundColor = settings.style.buttonBarLineColor
-                buttonBar.barLine.bounds.size.height = settings.style.buttonBarHeight ?? buttonBar.barLine.bounds.size.height
+                if let height = settings.style.buttonBarHeight {
+                    buttonBar.barLine.frame = CGRect(x: 0, y: buttonBar.bounds.height - height, width: buttonBar.bounds.width, height: height)
+                }
                 buttonBar.backgroundColor = .orange
                 buttonBar.selectedBar.backgroundColor = .black
                 buttonBar.autoresizingMask = .flexibleWidth
