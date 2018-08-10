@@ -57,7 +57,7 @@ open class BaseButtonBarPagerTabStripViewController<ButtonBarCellType: UICollect
             flowLayout.sectionInset = UIEdgeInsets(top: 0, left: settings.style.buttonBarLeftContentInset ?? 35, bottom: 0, right: settings.style.buttonBarRightContentInset ?? 35)
             let buttonBarHeight = settings.style.buttonBarHeight ?? 44
             let buttonBar = ButtonBarView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: buttonBarHeight), collectionViewLayout: flowLayout)
-            buttonBar.barLine.backgroundColor = settings.style.buttonBarLineColor
+            buttonBar.barLine.backgroundColor = settings.style.buttonBarLineColor ?? buttonBar.barLine.backgroundColor
             if let height = settings.style.buttonBarHeight {
                 buttonBar.barLine.frame = CGRect(x: 0, y: buttonBar.bounds.height - height, width: buttonBar.bounds.width, height: height)
             }
