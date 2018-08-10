@@ -36,12 +36,7 @@ public struct IndicatorInfo {
     public init(title: String?, titleColor: UIColor? = nil) {
         self.title = title
         self.accessibilityLabel = title
-    }
-    
-    public init(image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
-        self.image = image
-        self.highlightedImage = highlightedImage
-        self.userInfo = userInfo
+        self.titleColor = titleColor
     }
     
     public init(title: String?, titleColor: UIColor? = nil, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
@@ -50,6 +45,7 @@ public struct IndicatorInfo {
         self.image = image
         self.highlightedImage = highlightedImage
         self.userInfo = userInfo
+        self.titleColor = titleColor
     }
     
     public init(title: String?, titleColor: UIColor? = nil, accessibilityLabel:String?, image: UIImage?, highlightedImage: UIImage? = nil, userInfo: Any? = nil) {
@@ -58,6 +54,7 @@ public struct IndicatorInfo {
         self.image = image
         self.highlightedImage = highlightedImage
         self.userInfo = userInfo
+        self.titleColor = titleColor
     }
 
 }
