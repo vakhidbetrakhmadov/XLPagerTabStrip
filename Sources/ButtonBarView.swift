@@ -44,6 +44,12 @@ public enum SelectedBarVerticalAlignment {
 }
 
 open class ButtonBarView: UICollectionView {
+    
+    open lazy var barLine: UIView = { [unowned self] in
+        let bar = UIView(frame: CGRect(x: 0, y: self.bounds.size.height, width: self.bounds.width, height: 1))
+        bar.backgroundColor = .black
+        return bar
+    }()
 
     open lazy var selectedBar: UIView = { [unowned self] in
         let bar  = UIView(frame: CGRect(x: 0, y: self.frame.size.height - CGFloat(self.selectedBarHeight), width: 0, height: CGFloat(self.selectedBarHeight)))
@@ -62,11 +68,13 @@ open class ButtonBarView: UICollectionView {
 
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        addSubview(barLine)
         addSubview(selectedBar)
     }
 
     public override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
+        addSubview(barLine)
         addSubview(selectedBar)
     }
 
