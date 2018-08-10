@@ -46,7 +46,7 @@ public enum SelectedBarVerticalAlignment {
 open class ButtonBarView: UICollectionView {
     
     open lazy var barLine: UIView = { [unowned self] in
-        let bar = UIView(frame: CGRect(x: 0, y: self.bounds.size.height, width: self.bounds.width, height: 1))
+        let bar = UIView(frame: CGRect(x: 0, y: self.bounds.size.height - 1, width: self.bounds.width, height: 1))
         bar.backgroundColor = .black
         return bar
     }()
