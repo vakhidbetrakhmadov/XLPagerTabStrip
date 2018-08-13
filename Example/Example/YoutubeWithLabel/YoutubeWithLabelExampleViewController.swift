@@ -86,7 +86,7 @@ class YoutubeWithLabelExampleViewController: BaseButtonBarPagerTabStripViewContr
             let child = viewControllers[toIndex] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
             UIView.performWithoutAnimation({ [weak self] () -> Void in
                 guard let me = self else { return }
-                me.navigationItem.leftBarButtonItem?.title =  child.indicatorInfo(for: me).title
+                me.navigationItem.leftBarButtonItem?.title =  child.indicatorInfo(for: me, state: pagerTabStates[toIndex]).title
             })
         }
     }
