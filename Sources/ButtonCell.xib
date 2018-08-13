@@ -12,20 +12,20 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zg4-fX-zUF" customClass="ButtonBarViewCell" customModule="XLPagerTabStrip" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="99" height="40"/>
+            <rect key="frame" x="0.0" y="0.0" width="95" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="99" height="40"/>
+                <rect key="frame" x="0.0" y="0.0" width="95" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7f-rk-sQl">
-                        <rect key="frame" x="28" y="11.5" width="43" height="17"/>
+                        <rect key="frame" x="28" y="11.5" width="39" height="17"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tFG-yJ-6Th">
-                        <rect key="frame" x="75" y="10" width="20" height="20"/>
+                        <rect key="frame" x="71" y="10" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="8Kc-H6-AXe"/>
                             <constraint firstAttribute="height" constant="20" id="fLp-qD-04S"/>
@@ -41,12 +41,12 @@
                 <constraint firstItem="tFG-yJ-6Th" firstAttribute="centerY" secondItem="s7f-rk-sQl" secondAttribute="centerY" id="fRK-Ni-peX"/>
                 <constraint firstItem="s7f-rk-sQl" firstAttribute="centerY" secondItem="zg4-fX-zUF" secondAttribute="centerY" id="uKX-CO-B7I"/>
             </constraints>
-            <size key="customSize" width="161" height="40"/>
+            <size key="customSize" width="157" height="40"/>
             <connections>
                 <outlet property="imageView" destination="tFG-yJ-6Th" id="Odb-dR-tf4"/>
                 <outlet property="label" destination="s7f-rk-sQl" id="4gU-tb-BMB"/>
             </connections>
-            <point key="canvasLocation" x="347.5" y="541"/>
+            <point key="canvasLocation" x="345.5" y="541"/>
         </collectionViewCell>
     </objects>
 </document>
