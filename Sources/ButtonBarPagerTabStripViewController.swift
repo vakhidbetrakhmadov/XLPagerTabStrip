@@ -257,7 +257,8 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         guard shouldUpdateButtonBarView else { return }
         buttonBarView.move(fromIndex: fromIndex, toIndex: toIndex, progressPercentage: progressPercentage, pagerScroll: .yes)
-        if progressPercentage >= 1 {
+        
+        if fromIndex != toIndex && progressPercentage >= 1 {
             let oldIndexPath = IndexPath(item: currentIndex != fromIndex ? fromIndex : toIndex, section: 0)
             let newIndexPath = IndexPath(item: currentIndex, section: 0)
             let oldChildController = viewControllers[oldIndexPath.item] as! IndicatorInfoProvider // swiftlint:disable:this force_cast
@@ -266,8 +267,10 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
             pagerTabStates[newIndexPath.item] = .selected
             let oldIndicatorInfo = oldChildController.indicatorInfo(for: self, state: .notSelected)
             let newIndicatorInfo = newChildController.indicatorInfo(for: self, state: .selected)
+            
             let cells = cellForItems(at: [oldIndexPath, newIndexPath], reloadIfNotVisible: collectionViewDidLoad)
             let compacted = cells.compactMap { $0 }
+            
             [compacted.first! : oldIndicatorInfo, compacted.last! : newIndicatorInfo].forEach { cell, indicatorInfo in
                 cell.label.text = indicatorInfo.title
                 cell.accessibilityLabel = indicatorInfo.accessibilityLabel
