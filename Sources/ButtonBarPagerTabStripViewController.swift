@@ -257,9 +257,7 @@ open class ButtonBarPagerTabStripViewController: PagerTabStripViewController, Pa
     open func updateIndicator(for viewController: PagerTabStripViewController, fromIndex: Int, toIndex: Int, withProgressPercentage progressPercentage: CGFloat, indexWasChanged: Bool) {
         guard shouldUpdateButtonBarView else { return }
         buttonBarView.move(fromIndex: fromIndex, toIndex: toIndex, progressPercentage: progressPercentage, pagerScroll: .yes)
-        
-        print(fromIndex, toIndex, progressPercentage, indexWasChanged)
-        
+                
         if fromIndex != toIndex && progressPercentage >= 0.90 {
             let oldIndexPath = IndexPath(item: currentIndex != fromIndex ? fromIndex : toIndex, section: 0)
             let newIndexPath = IndexPath(item: currentIndex, section: 0)
